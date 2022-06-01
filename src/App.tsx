@@ -6,6 +6,7 @@
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import { Home } from "./pages/Home";
 import { NewRoom } from './pages/NewRoom';
+import { Room } from './pages/Room';
 import { AuthContextProvider } from './contexts/AuthContext';
 
 
@@ -27,7 +28,13 @@ function App() {
               <AuthContextProvider>
                 <NewRoom/>
               </AuthContextProvider>
-          }/>
+            }/>
+
+            <Route path="/rooms/:id" element={
+              <AuthContextProvider>
+                <Room/>
+              </AuthContextProvider>
+            }/>
       </Routes>
     </BrowserRouter>
   );
